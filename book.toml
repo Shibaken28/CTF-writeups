@@ -1,0 +1,10 @@
+[book]
+authors = ["Shibaken28"]
+language = "ja"
+multilingual = false
+src = "src"
+title = "shiba's writeups"
+
+[output.html]
+mathjax-support = true
+additional-js = ["./mathjax-config.js"]
