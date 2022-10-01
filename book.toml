@@ -6,5 +6,5 @@ src = "src"
 title = "shiba's writeups"
 
 [output.html]
-mathjax-support = true
 additional-js = ["./mathjax-config.js"]
+mathjax-support = true
