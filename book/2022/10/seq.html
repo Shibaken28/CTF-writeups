@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>CakeCTF2021 together as one - shiba&#x27;s writeups</title>
+        <title>picoCTF2022 Sequences - shiba&#x27;s writeups</title>
         
         
 
@@ -98,7 +98,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../../about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="chapter-item expanded "><a href="../../know/index.html"><strong aria-hidden="true">2.</strong> 知識</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../know/mod.html"><strong aria-hidden="true">2.1.</strong> 合同式基本</a></li></ol></li><li class="chapter-item expanded "><a href="../../2022/index.html"><strong aria-hidden="true">3.</strong> 2022</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2022/10/index.html"><strong aria-hidden="true">3.1.</strong> 10月</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2022/10/together.html" class="active"><strong aria-hidden="true">3.1.1.</strong> CakeCTF2021 together as one</a></li><li class="chapter-item expanded "><a href="../../2022/10/discrete.html"><strong aria-hidden="true">3.1.2.</strong> CakeCTF2021 discrete_log</a></li><li class="chapter-item expanded "><a href="../../2022/10/seq.html"><strong aria-hidden="true">3.1.3.</strong> picoCTF2022 Sequences</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="chapter-item expanded "><a href="../../know/index.html"><strong aria-hidden="true">2.</strong> 知識</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../know/mod.html"><strong aria-hidden="true">2.1.</strong> 合同式基本</a></li></ol></li><li class="chapter-item expanded "><a href="../../2022/index.html"><strong aria-hidden="true">3.</strong> 2022</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2022/10/index.html"><strong aria-hidden="true">3.1.</strong> 10月</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2022/10/together.html"><strong aria-hidden="true">3.1.1.</strong> CakeCTF2021 together as one</a></li><li class="chapter-item expanded "><a href="../../2022/10/discrete.html"><strong aria-hidden="true">3.1.2.</strong> CakeCTF2021 discrete_log</a></li><li class="chapter-item expanded "><a href="../../2022/10/seq.html" class="active"><strong aria-hidden="true">3.1.3.</strong> picoCTF2022 Sequences</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -166,114 +166,121 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="cakectf2021-together-as-one"><a class="header" href="#cakectf2021-together-as-one">CakeCTF2021 together as one</a></h1>
-<h2 id="問題概要"><a class="header" href="#問題概要">問題概要</a></h2>
-<p><a href="https://github.com/theoremoon/cakectf-2021-public/tree/master/crypto/together_as_one/distfiles">問題リンクファイル</a></p>
-<p>素数$p,q,r$があり，$e\equiv65537$，フラグを$m$とし，次の値が与えられる．
-$$
-n \equiv pqr \\
-c \equiv m^e \\
-x \equiv (p+q)^r \mod n \\
-y \equiv (p+qr)^r \mod n
-$$</p>
-<h2 id="解法"><a class="header" href="#解法">解法</a></h2>
-<p>二項定理により，$x$の値について次の計算ができる．
-$n=pqr$であり，$0&lt;x&lt;r$のとき${}_r\textrm{C}_x$が$r$の倍数であることを使っている．
-$$
-\begin{align}
-x &amp;\equiv (p+q)^r \mod n \\
-&amp;\equiv {}_r\textrm{C}_0 p^rq^0 + {}_r\textrm{C}_1 p^{r-1}q^1 + {}_r \textrm{C}_2 p^{r-2}q^2 +   \cdots + {}_r\textrm{C}_{r-1} p^1q^{r-1} + {}_r\textrm{C}_{r} p^0q^{r-1} \mod n \\
-&amp;\equiv p^r + q^r \mod n
-\end{align}
-$$
-$y$も同様に，展開をして$n$の倍数になる項を削除する．
-$$
-\begin{align}
-y &amp;\equiv (p+qr)^r \mod n \\
-&amp;\equiv p^r + q^rr^r \mod n
-\end{align}
-$$
-法$q$の世界で考える．すると，
-$$
-\begin{align}
-x &amp;\equiv p^r \mod q\\
-y &amp;\equiv p^r \mod q
-\end{align}
-$$
-よって，整数$k$を用いると次が成り立つ
-$$
-\begin{align}
-x &amp;\equiv y \mod q\\
-x &amp;\equiv y + kq \\
-x - y &amp;\equiv kq
-\end{align}
-$$</p>
-<p>$x-y$は$q$の倍数であり，$n$も素因数$q$を持っているため，$q\equiv\textrm{GCD}(x-y,n)$である．</p>
-<p>次に，$x$と$y$を法$r$で考える．フェルマーの小定理により，$p^r \mod r\equiv p$が成り立つ(他の変数も同様)．</p>
+                        <h1 id="picoctf2022-sequences"><a class="header" href="#picoctf2022-sequences">picoCTF2022 Sequences</a></h1>
+<h2 id="概要"><a class="header" href="#概要">概要</a></h2>
 <p>$$
 \begin{align}
-x \equiv p + q \mod r\\
-y \equiv p \mod r
+a_0 &amp;= 1 \\
+a_1 &amp;= 2 \\
+a_2 &amp;= 3 \\
+a_3 &amp;= 4 \\
+a_i &amp;= 21a_{i-1} + 301a_{i-2} - 9549_{i-3} + 55692 a_{i-4} \quad (i&gt;4)
 \end{align}
 $$
-$q$が邪魔だが既知であるため，$r$について合同な式ができる．
+で定義される数列で，$a_{20000000}$を$10^{10000}$で割った余りを求める．</p>
+<h2 id="解法"><a class="header" href="#解法">解法</a></h2>
+<p>数列は，$4$項間の線形漸化式である．線形漸化式の$n$項目は高速に求められる(<a href="https://shibaken28.github.io/my-library-for-competitive-programming/famous/fibo.html">参考</a>)．
+次のように行列で表し，ダブリングによって累乗を高速に計算する．
 $$
-\begin{align}
-x - q \equiv y \mod r\\
-\end{align}
-$$
-よって，$r\equiv\textrm{GCD}(x-q-y,n/q)$である．</p>
-<pre><code class="language-python">from Crypto.Util.number import long_to_bytes,inverse
+\begin{pmatrix}
+21 &amp; 301 &amp; -9549 &amp; 55692 \\
+1 &amp;0&amp;0&amp;0\\
+0&amp;1&amp;0&amp;0\\
+0&amp;0&amp;1&amp;0\\
+\end{pmatrix}
+^{n-3}
+\begin{pmatrix}
+a_3\\
+a_2\\
+a_1\\
+a_0
+\end{pmatrix}
+=
+\begin{pmatrix}
+a_n\\
+a_{n-1}\\
+a_{n-2}\\
+a_{n-3}
+\end{pmatrix}
+$$</p>
+<pre><code class="language-python">import math
+import hashlib
+import sys
+from tqdm import tqdm
+import functools
 
-def GCD(a,b):
-    if a%b==0:
-        return b
-    return GCD(b,a%b)
+ITERS = int(2e7)
+VERIF_KEY = &quot;96cc5f3b460732b442814fd33cf8537c&quot;
+ENCRYPTED_FLAG = bytes.fromhex(&quot;42cbbce1487b443de1acf4834baed794f4bbd0dfe08b5f3b248ef7c32b&quot;)
 
-def LCM(a,b):
-    return a//GCD(a,b)*b
+def mat_mul(a, b) :
+    I, J, K = len(a), len(b[0]), len(b)
+    c = [[0] * J for _ in range(I)]
+    for i in range(I) :
+        for j in range(J) :
+            for k in range(K) :
+                c[i][j] += a[i][k] * b[k][j]
+            c[i][j] %= 10**10000
+    return c
 
 
-n = # 長いので省略
-c = 
-x = 
-y = 
-e = 0x10001
+def mat_pow(x, n):
+    y = [[0] * len(x) for _ in range(len(x))]
 
-q = GCD((x-y)%n,n)
-r = GCD((x-y-q)%n,n)//q
-p = n//r//q
+    for i in range(len(x)):
+        y[i][i] = 1
 
-print(f'{p = :#}')
-print(f'{q = :#}')
-print(f'{r = :#}')
-assert p*q*r == n
+    while n &gt; 0:
+        if n &amp; 1:
+            y = mat_mul(x, y)
+        x = mat_mul(x, x)
+        n &gt;&gt;= 1
 
-phi = (p-1)*(q-1)*(r-1)
-d = pow(e,-1,phi)
-m = pow(c,d,n)
-print(long_to_bytes(m))
-</code></pre>
-<pre><code class="language-none">CakeCTF{This_chall_is_inspired_by_this_music__Check_out!__https://www.youtube.com/watch?v=vLadkYLi8YE_cf49dcb6a31f}
+    return y
+
+
+d0 = 0
+ret = [[4], [3], [2],[1]]
+mat = [[21,301,-9549,55692], [1, 0, 0, 0], [0, 1, 0, 0],[0,0,1,0]]
+#ret = mat_mul(mat_pow(mat, ITERS), ret)
+#ret = [[1],[1]]
+#mat = [[1,1], [1,0]]
+ret = mat_mul(mat_pow(mat, ITRES), ret)
+print(ret)
+
+
+# Decrypt the flag
+def decrypt_flag(sol):
+    sol = sol % (10**10000)
+    sol = str(sol)
+    sol_md5 = hashlib.md5(sol.encode()).hexdigest()
+
+    if sol_md5 != VERIF_KEY:
+        print(&quot;Incorrect solution&quot;)
+        sys.exit(1)
+
+    key = hashlib.sha256(sol.encode()).digest()
+    flag = bytearray([char ^ key[i] for i, char in enumerate(ENCRYPTED_FLAG)]).decode()
+
+    print(flag)
+
+if __name__ == &quot;__main__&quot;:
+    sol = A
+    decrypt_flag(sol)
 </code></pre>
 <h2 id="感想"><a class="header" href="#感想">感想</a></h2>
-<p>$q$を見つけた後がわかりませんでした．
-こういう式変形して最大公約数とって$p,q$あぶり出すタイプの問題，法を$p$とか$q$して合同な数を見つけようとすると見えやすくなるのかもしれない．</p>
+<p>競プロチック</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../../2022/10/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../2022/10/discrete.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
-                        
-                            <a rel="next" href="../../2022/10/discrete.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -283,15 +290,11 @@ print(long_to_bytes(m))
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../../2022/10/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../2022/10/discrete.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
-                
-                    <a rel="next" href="../../2022/10/discrete.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 
             </nav>
 
