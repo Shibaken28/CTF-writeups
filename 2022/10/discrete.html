@@ -98,7 +98,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../../about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="chapter-item expanded "><a href="../../2022/index.html"><strong aria-hidden="true">2.</strong> 2022</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2022/10/index.html"><strong aria-hidden="true">2.1.</strong> 10月</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2022/10/together.html"><strong aria-hidden="true">2.1.1.</strong> CakeCTF2021 together as one</a></li><li class="chapter-item expanded "><a href="../../2022/10/discrete.html" class="active"><strong aria-hidden="true">2.1.2.</strong> CakeCTF2021 discrete_log</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="chapter-item expanded "><a href="../../know/index.html"><strong aria-hidden="true">2.</strong> 知識</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../know/mod.html"><strong aria-hidden="true">2.1.</strong> 合同式基本</a></li></ol></li><li class="chapter-item expanded "><a href="../../2022/index.html"><strong aria-hidden="true">3.</strong> 2022</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2022/10/index.html"><strong aria-hidden="true">3.1.</strong> 10月</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2022/10/together.html"><strong aria-hidden="true">3.1.1.</strong> CakeCTF2021 together as one</a></li><li class="chapter-item expanded "><a href="../../2022/10/discrete.html" class="active"><strong aria-hidden="true">3.1.2.</strong> CakeCTF2021 discrete_log</a></li><li class="chapter-item expanded "><a href="../../2022/10/seq.html"><strong aria-hidden="true">3.1.3.</strong> picoCTF2022 Sequences</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -171,13 +171,13 @@
 <p><a href="https://github.com/theoremoon/cakectf-2021-public/tree/master/crypto/discrete-log/distfiles">問題リンク</a></p>
 <p>フラグの文字列の$i$文字目の文字コードを$m_i$として
 $$
-c_i = g^{rm_i} \mod p
+c_i \equiv g^{rm_i} \mod p
 $$
 の各$c_i$が与えられる．なお，素数$p$と正の整数$g$は与えられている．正の整数$r$は与えられない．</p>
 <h2 id="解法"><a class="header" href="#解法">解法</a></h2>
 <p>$g^r$の値がわかれば，$m_i$を全探索(多くて256通り)すればいい．
-フラグ形式より，$m_0$が<code>ord(&quot;C&quot;)</code>であることがわかるので，$d=m_0^{-1}\mod \phi(p)$として
-$(g^{rm_0})^d = g^r \mod p$と計算することで$g^r$が求める．</p>
+フラグ形式より，$m_0$が<code>ord(&quot;C&quot;)</code>であることがわかるので，$d\equiv m_0^{-1}\mod \phi(p)$として
+$(g^{rm_0})^d \equiv g^r \mod p$と計算することで$g^r$が求める．</p>
 <pre><code class="language-python">from Crypto.Util.number import *
 
 def GCD(a,b):
@@ -224,6 +224,10 @@ print(flag)
                         
 
                         
+                            <a rel="next" href="../../2022/10/seq.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
 
                         <div style="clear: both"></div>
                     </nav>
@@ -237,6 +241,10 @@ print(flag)
                     </a>
                 
 
+                
+                    <a rel="next" href="../../2022/10/seq.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                 
             </nav>
 
