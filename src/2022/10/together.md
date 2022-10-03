@@ -97,6 +97,6 @@ print(long_to_bytes(m))
 CakeCTF{This_chall_is_inspired_by_this_music__Check_out!__https://www.youtube.com/watch?v=vLadkYLi8YE_cf49dcb6a31f}
 ```
 
-## 感想
+## コメント
 $q$を見つけた後がわかりませんでした．
 こういう式変形して最大公約数とって$p,q$あぶり出すタイプの問題，法を$p$とか$q$して合同な数を見つけようとすると見えやすくなるのかもしれない．

@@ -35,5 +35,5 @@ print(long_to_bytes(int(x)))
 ```
 sagemathにおける楕円曲線については[こちら](https://doc.sagemath.org/html/ja/tutorial/tour_advanced.html)に載っている．
 
-## 感想
+## コメント
 僕にとってsagemathのリファレンスはほとんど意味がわかりません．

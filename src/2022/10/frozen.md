@@ -45,7 +45,7 @@ print(long_to_bytes(inverse(minv,n)))
 CakeCTF{oh_you_got_a_tepid_cake_sorry}
 ```
 
-## 感想
+## コメント
 CakeCTF 2022 開催記より引用([リンク](https://furutsuki.hatenablog.com/entry/2022/09/05/000733#frozen-cake))．
 > warmupでRSAの乗法準同型性に関する知識とフェルマーの小定理を要求していてなかなかハードですね。とはいえCTFの暗号分野では基礎となるような数学の知識ですので、CTFの問題としてはこのくらいは出題したいところです。これが解けたらある程度のCryptoに関する実力がありますと言って良いんじゃないかと思います。
 

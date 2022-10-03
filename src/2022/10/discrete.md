@@ -48,5 +48,5 @@ print(flag)
 CakeCTF{ba37a0f409ef3ec23a6cffbc474a1cef}
 ```
 
-## 感想
+## コメント
 1文字ずつ暗号化するのは危険

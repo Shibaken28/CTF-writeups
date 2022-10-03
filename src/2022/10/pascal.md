@@ -104,6 +104,6 @@ d=int(code,2)
 print(hex(pow(enc,d,N)))
 ```
 
-## 感想
+## コメント
 めっちゃ数論
 

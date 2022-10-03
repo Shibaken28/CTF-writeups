@@ -16,4 +16,6 @@
     - [K3RN3LCTF Pascal RSA](./2022/10/pascal.md)
     - [CakeCTF2022 frozen cake](./2022/10/frozen.md)
     - [CakeCTF2022 brand new crypto](./2022/10/new.md)
-    - [waniCTF2021 sweet_curve](./2022/10/sweet.md)
+    - [waniCTF2021 sweet curve](./2022/10/sweet.md)
+    - [InterKosenCTF2020 ciphertexts](./2022/10/cipher.md)
+    - [CrewCTF2022 The HUGE e](./2022/10/hugee.md)
