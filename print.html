@@ -100,7 +100,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="chapter-item expanded "><a href="know/index.html"><strong aria-hidden="true">2.</strong> 知識</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="know/mod.html"><strong aria-hidden="true">2.1.</strong> 合同式基本</a></li></ol></li><li class="chapter-item expanded "><a href="2022/index.html"><strong aria-hidden="true">3.</strong> 2022</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="2022/10/index.html"><strong aria-hidden="true">3.1.</strong> 10月</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="2022/10/together.html"><strong aria-hidden="true">3.1.1.</strong> CakeCTF2021 together as one</a></li><li class="chapter-item expanded "><a href="2022/10/discrete.html"><strong aria-hidden="true">3.1.2.</strong> CakeCTF2021 discrete_log</a></li><li class="chapter-item expanded "><a href="2022/10/seq.html"><strong aria-hidden="true">3.1.3.</strong> picoCTF2022 Sequences</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="chapter-item expanded "><a href="know/index.html"><strong aria-hidden="true">2.</strong> 知識</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="know/mod.html"><strong aria-hidden="true">2.1.</strong> 合同式基本</a></li><li class="chapter-item expanded "><a href="know/factor.html"><strong aria-hidden="true">2.2.</strong> ❌素因数分解</a></li><li class="chapter-item expanded "><a href="know/gcd.html"><strong aria-hidden="true">2.3.</strong> ❌最大公約数</a></li><li class="chapter-item expanded "><a href="know/extgcd.html"><strong aria-hidden="true">2.4.</strong> ❌拡張ユークリッドの互除法</a></li><li class="chapter-item expanded "><a href="know/fermat.html"><strong aria-hidden="true">2.5.</strong> ❌フェルマーの小定理</a></li><li class="chapter-item expanded "><a href="know/DLP.html"><strong aria-hidden="true">2.6.</strong> ❌離散対数問題</a></li></ol></li><li class="chapter-item expanded "><a href="2022/index.html"><strong aria-hidden="true">3.</strong> 2022</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="2022/10/index.html"><strong aria-hidden="true">3.1.</strong> 10月</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="2022/10/together.html"><strong aria-hidden="true">3.1.1.</strong> CakeCTF2021 together as one</a></li><li class="chapter-item expanded "><a href="2022/10/discrete.html"><strong aria-hidden="true">3.1.2.</strong> CakeCTF2021 discrete_log</a></li><li class="chapter-item expanded "><a href="2022/10/seq.html"><strong aria-hidden="true">3.1.3.</strong> picoCTF2022 Sequences</a></li><li class="chapter-item expanded "><a href="2022/10/pascal.html"><strong aria-hidden="true">3.1.4.</strong> K3RN3LCTF Pascal RSA</a></li><li class="chapter-item expanded "><a href="2022/10/frozen.html"><strong aria-hidden="true">3.1.5.</strong> CakeCTF2022 frozen cake</a></li><li class="chapter-item expanded "><a href="2022/10/new.html"><strong aria-hidden="true">3.1.6.</strong> CakeCTF2022 brand new crypto</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -196,6 +196,13 @@ a - b \equiv c - d \mod m \\
 ab \equiv cd \mod m
 $$
 証明は，整数$k,l$を使って$a=km+c,b=lm+d$とかで表して計算するとできる．</p>
+<h1 id="素因数分解"><a class="header" href="#素因数分解">素因数分解</a></h1>
+<h2 id="愚直"><a class="header" href="#愚直">愚直</a></h2>
+<p>$2$から順に</p>
+<h1 id="最大公約数"><a class="header" href="#最大公約数">最大公約数</a></h1>
+<h1 id="拡張ユークリッドの互除法"><a class="header" href="#拡張ユークリッドの互除法">拡張ユークリッドの互除法</a></h1>
+<h1 id="フェルマーの小定理"><a class="header" href="#フェルマーの小定理">フェルマーの小定理</a></h1>
+<h1 id="離散対数問題"><a class="header" href="#離散対数問題">離散対数問題</a></h1>
 <h1 id="2022"><a class="header" href="#2022">2022</a></h1>
 <h1 id="2022-1"><a class="header" href="#2022-1">2022</a></h1>
 <h1 id="cakectf2021-together-as-one"><a class="header" href="#cakectf2021-together-as-one">CakeCTF2021 together as one</a></h1>
@@ -336,7 +343,7 @@ print(flag)
 <pre><code class="language-none">CakeCTF{ba37a0f409ef3ec23a6cffbc474a1cef}
 </code></pre>
 <h2 id="感想-1"><a class="header" href="#感想-1">感想</a></h2>
-<p>$g$の値使わないんですね</p>
+<p>1文字ずつ暗号化するのは危険</p>
 <h1 id="picoctf2022-sequences"><a class="header" href="#picoctf2022-sequences">picoCTF2022 Sequences</a></h1>
 <h2 id="概要-1"><a class="header" href="#概要-1">概要</a></h2>
 <p>$$
@@ -441,6 +448,208 @@ if __name__ == &quot;__main__&quot;:
 </code></pre>
 <h2 id="感想-2"><a class="header" href="#感想-2">感想</a></h2>
 <p>競プロチック</p>
+<h1 id="k3rn3lctf-pascal-rsa"><a class="header" href="#k3rn3lctf-pascal-rsa">K3RN3LCTF Pascal RSA</a></h1>
+<h2 id="問題概要-1"><a class="header" href="#問題概要-1">問題概要</a></h2>
+<p>次のPythonファイルと出力が与えら得れる．</p>
+<pre><code class="language-python">triangle =[[1]]
+flag = open('flag.txt','rb').read()
+
+from Crypto.Util.number import getPrime,bytes_to_long
+from math import gcd
+p = getPrime(20)
+while len(triangle[-1]) &lt;= p:
+    r = [1]
+    for i in range(len(triangle[-1]) - 1):
+        r.append(triangle[-1][i] + triangle[-1][i+1])
+    r.append(1)
+    triangle.append(r)
+code = ''
+for x in triangle[-1]:
+    code+=str(x%2)
+d = int(code,2)
+while True:
+    P = getPrime(512)
+    Q = getPrime(512)
+    if gcd(d, (P-1)*(Q-1)) == 1:
+        N = P*Q
+        e = pow(d,-1,(P-1)*(Q-1))
+        break
+enc = pow(bytes_to_long(flag), e, N)
+file = open('challenge.txt','w')
+file.write(f'p = {p}\nenc = {enc}\nN = {N}')
+</code></pre>
+<pre><code class="language-python">p = 751921
+enc = 9820620269072860401665805101881284961421302475382405373888746780467409082575009633494008131637326951607592072546997831382261451919226781535697132306297667495663005072695351430953630099751335020192098397722937812151774786232707555386479774460529133941848677746581256792960571286418291329780280128419358700449
+N = 84317137476812805534382776304205215410373527909056058618583365618383741423290821410270929574317899945862949829480082811084554009265439540307568537940249227388935154641779863441301292378975855625325375299980291629608995049742243591901547177853086110999523167557589597375590016312480342995048934488540440868447 
+</code></pre>
+<h2 id="解法-3"><a class="header" href="#解法-3">解法</a></h2>
+<p>問題名がヒントになっていて，$p=751922$段(便宜上，$1$が一つだけの三角形を$0$段と呼ぶことにする)のパスカルの三角形を作り，最下段の偶奇によって$d$を作っている．この$d$を求める問題．
+問題ファイルにパスカルの三角形を求めるプログラムがついているが，$p=75192$段のパスカル三角形を作るには時間計算量$O(p^2)$がかかり，非常に時間がかかる．途中経過をすっ飛ばして，最下段の偶奇のみを求める何らかの方法を見つけなければならない．</p>
+<p>パスカルの三角形というのは，次のようなものである．
+$$
+\begin{array}{c}
+1 \\
+1\ 1\\
+1\ 2\ 1\\
+1\ 3\ 3\ 1\\
+1\ 4\ 6\ 4\ 1\\
+1\ 5\ 10\ 10\ 5\ 1\\
+\vdots \qquad \vdots \qquad \vdots
+\end{array}
+$$
+これは，二項係数を並べたものと見ることができる．
+なぜこれが成り立つかは，三角形の上の頂点からその場所までの経路の数を考えるとわかりやすい(ここではあまり説明しない)．
+$$
+\begin{array}{c}
+{}_0\textrm{C}_0 \\
+{}_1\textrm{C}_0\ {}_1\textrm{C}_1\\
+{}_2\textrm{C}_0\ {}_2\textrm{C}_1\ {}_2\textrm{C}_2\\
+{}_3\textrm{C}_0\ {}_3\textrm{C}_1\ {}_3\textrm{C}_2\ {}_3\textrm{C}_3\\
+{}_4\textrm{C}_0\ {}_4\textrm{C}_1\ {}_4\textrm{C}_2\ {}_4\textrm{C}_3\ {}_4\textrm{C}_4\\
+\vdots \qquad \vdots \qquad \vdots
+\end{array}
+$$
+$p$段のパスカルの三角形の最下段は，${}_p\textrm{C}_i(0\leq i\leq p)$が並んでいる．</p>
+<p>ここで，ルーカスの定理を使う．</p>
+<p>$$
+{}_m\textrm{C}_n = \prod_{i=0}^{k} {}_{m_i}\textrm{C}_{n_i} \pmod p \\
+$$
+ただし，$m_k m_{k-1} m_{k-2} \cdots m_1 m_0$は $m$の$p$進数表示，$n_k n_{k-1} n_{k-2} \cdots n_1 n_0$は $n$の$p$進数表示である．
+特に，$\pmod 2$の世界は次の$4$パターンしか出てこない．
+$$
+{}_1\textrm{C}_0 = 1 \\
+{}_1\textrm{C}_1 = 1 \\
+{}_0\textrm{C}_0 = 1 \\
+{}_0\textrm{C}_1 = 0
+$$
+よって，ルーカスの定理を使うときに${}_0\textrm{C}_1$($m_i=0$かつ$n_i=1$となる$i$)が1つも出てこなかったら，計算結果は$1 \pmod 2$，すなわち奇数となる．これは，<code>m&amp;n == n</code>が真であることと同値である．</p>
+<p>これで，${}_p\textrm{C}_i(0\leq i\leq p)$の偶奇が各$i$について$O(1)$で計算できる．</p>
+<pre><code class="language-python">p = 751921
+enc = 9820620269072860401665805101881284961421302475382405373888746780467409082575009633494008131637326951607592072546997831382261451919226781535697132306297667495663005072695351430953630099751335020192098397722937812151774786232707555386479774460529133941848677746581256792960571286418291329780280128419358700449
+N = 84317137476812805534382776304205215410373527909056058618583365618383741423290821410270929574317899945862949829480082811084554009265439540307568537940249227388935154641779863441301292378975855625325375299980291629608995049742243591901547177853086110999523167557589597375590016312480342995048934488540440868447
+
+
+def is_nCk_odd( n,k):
+    return n&amp;k == k
+
+code=''
+for i in range(0,p+1):
+    ch=is_nCk_odd(p,i)
+    if ch:
+        code+='1'
+    else:
+        code+='0'
+
+d=int(code,2)
+
+print(hex(pow(enc,d,N)))
+</code></pre>
+<h2 id="感想-3"><a class="header" href="#感想-3">感想</a></h2>
+<p>めっちゃ数論</p>
+<h1 id="cakectf2022-frozen-cake"><a class="header" href="#cakectf2022-frozen-cake">CakeCTF2022 frozen cake</a></h1>
+<h2 id="問題"><a class="header" href="#問題">問題</a></h2>
+<p><a href="https://github.com/theoremoon/cakectf2022-public/tree/master/crypto/frozen_cake/distfiles">問題ファイル</a>
+素数$p,q$と平文$m$，$n=pq$から次の$a,b,c$の値が与えられる．$n$の値も与えられる．
+$$
+\begin{align}
+a &amp;\equiv m^p \mod n \\
+b &amp;\equiv m^q \mod n \\
+c &amp;\equiv m^n \mod n
+\end{align}
+$$</p>
+<h2 id="解法-4"><a class="header" href="#解法-4">解法</a></h2>
+<p>$p$と$q$は$\phi(n)$と互いに素ではないため，$a,b$から$m$を復元するのは難しそう．
+$c$を変形してみる．</p>
+<p>$$
+n = (p-1)(q-1) + p+q-1 = \phi(n) + p+q-1 \\
+c \equiv m^n \equiv m^{\phi(n) +p+q-1} \equiv m^{p+q-1} \equiv m^p m^q m^{-1}\pmod n
+$$</p>
+<p>ここで，$m^p,m^q\pmod n$の値はわかっているので，
+$$
+c a^{-1} b^{-1} \equiv m^{-1} \pmod n
+$$
+これで$m^{-1}\mod n$が求まり，これの逆数がフラグである．</p>
+<pre><code class="language-python">from Crypto.Util.number import inverse , long_to_bytes
+
+n = 101205131618457490641888226172378900782027938652382007193297646066245321085334424928920128567827889452079884571045344711457176257019858157287424646000972526730522884040459357134430948940886663606586037466289300864147185085616790054121654786459639161527509024925015109654917697542322418538800304501255357308131
+a = 38686943509950033726712042913718602015746270494794620817845630744834821038141855935687477445507431250618882887343417719366326751444481151632966047740583539454488232216388308299503129892656814962238386222995387787074530151173515835774172341113153924268653274210010830431617266231895651198976989796620254642528
+b = 83977895709438322981595417453453058400465353471362634652936475655371158094363869813512319678334779139681172477729044378942906546785697439730712057649619691929500952253818768414839548038664187232924265128952392200845425064991075296143440829148415481807496095010301335416711112897000382336725454278461965303477
+c = 21459707600930866066419234194792759634183685313775248277484460333960658047171300820279668556014320938220170794027117386852057041210320434076253459389230704653466300429747719579911728990434338588576613885658479123772761552010662234507298817973164062457755456249314287213795660922615911433075228241429771610549
+
+ainv = inverse(a,n)
+binv = inverse(b,n)
+minv = (c * ainv * binv)%n
+print(long_to_bytes(inverse(minv,n)))
+
+</code></pre>
+<pre><code>CakeCTF{oh_you_got_a_tepid_cake_sorry}
+</code></pre>
+<h2 id="感想-4"><a class="header" href="#感想-4">感想</a></h2>
+<p>CakeCTF 2022 開催記より引用(<a href="https://furutsuki.hatenablog.com/entry/2022/09/05/000733#frozen-cake">リンク</a>)．</p>
+<blockquote>
+<p>warmupでRSAの乗法準同型性に関する知識とフェルマーの小定理を要求していてなかなかハードですね。とはいえCTFの暗号分野では基礎となるような数学の知識ですので、CTFの問題としてはこのくらいは出題したいところです。これが解けたらある程度のCryptoに関する実力がありますと言って良いんじゃないかと思います。</p>
+</blockquote>
+<p>ある程度のCryptoに関する実力があるそうです．暗号er名乗っていいですか！</p>
+<h1 id="cakectf2022-brand-new-crypto"><a class="header" href="#cakectf2022-brand-new-crypto">CakeCTF2022 brand new crypto</a></h1>
+<h2 id="問題-1"><a class="header" href="#問題-1">問題</a></h2>
+<p><a href="https://github.com/theoremoon/cakectf2022-public/tree/master/crypto/brand_new_crypto/distfiles">問題リンク</a></p>
+<p>素数$p,q$があり，$n=pq$．$\phi=(p-1)(q-1)$として$0$以上$\phi$以下の整数$a,s$があり，</p>
+<p>$$
+\begin{align}
+\phi &amp;= (p-1)(q-1) \\
+b &amp;= \phi + 1 -a \\
+t &amp;= -sa b^{-1} \pmod \phi
+\end{align}
+$$</p>
+<p>$b$と$\phi$は互いに素であることが保証される．
+$0$以上$n$以下の整数$r$を使って次のように暗号化される
+$$
+c_1 \equiv mr^s \pmod n\\
+c_2 \equiv mr^t \pmod n
+$$
+復元は次のようにできる
+$$
+m = c_1 ^a c_2^b \pmod n
+$$</p>
+<p>その他色々な条件があるが，この暗号が破綻しないために例外を考えなくていいということなんだろう．</p>
+<p>そして，各フラグの$i$文字目の文字コード$m_i$についてこの暗号化をした値$c_1,c_2$が与えられる．また，全体で$a,b,s,t,p,q$の値は固定．$r$だけランダム．
+与えられる値は，各暗号化された値と$s,t,n$．</p>
+<h2 id="考えたこと"><a class="header" href="#考えたこと">考えたこと</a></h2>
+<p>なんかよくわからないのでまず復元で何が起こっているかを見ておく．
+確かに，
+$$
+m\equiv  c_1 ^a c_2 ^b \equiv (mr^s)^a (mr^t)^b \equiv m^a r^{sa} m^b r^{-sab^{-1}b} \equiv m^{ab}r^{sa-sa} \equiv m^{ab} \equiv m^{\phi+1} \equiv m \pmod n
+$$
+と成り立っている．
+なんとなく，$t$が$a,b$にから計算されているので，これをうまく使うんじゃないかと思う．
+あと，$m_i$がせいぜい256通りなので，それっぽい値がわかれば全探索が可能．</p>
+<p>4時間後，次の方法が思いついた．</p>
+<p>$$
+(mr^s)^t (mr^t)^{-s} \equiv m^{t-s} r^{st-st} \equiv m^{t-s} \pmod n
+$$</p>
+<p>これで，$m$を全探索して$m^{t-s}\pmod n$と一致するものを見つければ良い．
+$s$と$t$が具体的にどんな方法で出された値であるかを考える必要はなかったのだ．</p>
+<pre><code class="language-python">from Crypto.Util.number import inverse , long_to_bytes
+
+s,t,n = 長いので省略
+cs = 
+
+flag = &quot;&quot;
+for c1,c2 in cs:
+    mst = (pow(c1,t,n)*pow(pow(c2,s,n)%n,-1,n))%n
+    print(mst)
+    for m in range(256):
+        if pow(m,t-s,n)==mst:
+            print(chr(m))
+            flag += chr(m)
+print(flag)
+
+</code></pre>
+<pre><code class="language-none">CakeCTF{s0_anyway_tak3_car3_0f_0n3_byt3_p1aint3xt}
+</code></pre>
+<h2 id="感想-5"><a class="header" href="#感想-5">感想</a></h2>
+<p>悩んだ割に結構解法がシンプルでした．$m$が同じで$e$が異なるRSAへの攻撃手法を思い出しました．
+同じ数の異なる冪数があるときはこの道の解法を考えると良さそう．</p>
 
                     </main>
 

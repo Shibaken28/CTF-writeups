@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>picoCTF2022 Sequences - shiba&#x27;s writeups</title>
+        <title>K3RN3LCTF Pascal RSA - shiba&#x27;s writeups</title>
         
         
 
@@ -98,7 +98,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../../about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="chapter-item expanded "><a href="../../know/index.html"><strong aria-hidden="true">2.</strong> 知識</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../know/mod.html"><strong aria-hidden="true">2.1.</strong> 合同式基本</a></li><li class="chapter-item expanded "><a href="../../know/factor.html"><strong aria-hidden="true">2.2.</strong> ❌素因数分解</a></li><li class="chapter-item expanded "><a href="../../know/gcd.html"><strong aria-hidden="true">2.3.</strong> ❌最大公約数</a></li><li class="chapter-item expanded "><a href="../../know/extgcd.html"><strong aria-hidden="true">2.4.</strong> ❌拡張ユークリッドの互除法</a></li><li class="chapter-item expanded "><a href="../../know/fermat.html"><strong aria-hidden="true">2.5.</strong> ❌フェルマーの小定理</a></li><li class="chapter-item expanded "><a href="../../know/DLP.html"><strong aria-hidden="true">2.6.</strong> ❌離散対数問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../2022/index.html"><strong aria-hidden="true">3.</strong> 2022</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2022/10/index.html"><strong aria-hidden="true">3.1.</strong> 10月</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2022/10/together.html"><strong aria-hidden="true">3.1.1.</strong> CakeCTF2021 together as one</a></li><li class="chapter-item expanded "><a href="../../2022/10/discrete.html"><strong aria-hidden="true">3.1.2.</strong> CakeCTF2021 discrete_log</a></li><li class="chapter-item expanded "><a href="../../2022/10/seq.html" class="active"><strong aria-hidden="true">3.1.3.</strong> picoCTF2022 Sequences</a></li><li class="chapter-item expanded "><a href="../../2022/10/pascal.html"><strong aria-hidden="true">3.1.4.</strong> K3RN3LCTF Pascal RSA</a></li><li class="chapter-item expanded "><a href="../../2022/10/frozen.html"><strong aria-hidden="true">3.1.5.</strong> CakeCTF2022 frozen cake</a></li><li class="chapter-item expanded "><a href="../../2022/10/new.html"><strong aria-hidden="true">3.1.6.</strong> CakeCTF2022 brand new crypto</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="chapter-item expanded "><a href="../../know/index.html"><strong aria-hidden="true">2.</strong> 知識</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../know/mod.html"><strong aria-hidden="true">2.1.</strong> 合同式基本</a></li><li class="chapter-item expanded "><a href="../../know/factor.html"><strong aria-hidden="true">2.2.</strong> ❌素因数分解</a></li><li class="chapter-item expanded "><a href="../../know/gcd.html"><strong aria-hidden="true">2.3.</strong> ❌最大公約数</a></li><li class="chapter-item expanded "><a href="../../know/extgcd.html"><strong aria-hidden="true">2.4.</strong> ❌拡張ユークリッドの互除法</a></li><li class="chapter-item expanded "><a href="../../know/fermat.html"><strong aria-hidden="true">2.5.</strong> ❌フェルマーの小定理</a></li><li class="chapter-item expanded "><a href="../../know/DLP.html"><strong aria-hidden="true">2.6.</strong> ❌離散対数問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../2022/index.html"><strong aria-hidden="true">3.</strong> 2022</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2022/10/index.html"><strong aria-hidden="true">3.1.</strong> 10月</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2022/10/together.html"><strong aria-hidden="true">3.1.1.</strong> CakeCTF2021 together as one</a></li><li class="chapter-item expanded "><a href="../../2022/10/discrete.html"><strong aria-hidden="true">3.1.2.</strong> CakeCTF2021 discrete_log</a></li><li class="chapter-item expanded "><a href="../../2022/10/seq.html"><strong aria-hidden="true">3.1.3.</strong> picoCTF2022 Sequences</a></li><li class="chapter-item expanded "><a href="../../2022/10/pascal.html" class="active"><strong aria-hidden="true">3.1.4.</strong> K3RN3LCTF Pascal RSA</a></li><li class="chapter-item expanded "><a href="../../2022/10/frozen.html"><strong aria-hidden="true">3.1.5.</strong> CakeCTF2022 frozen cake</a></li><li class="chapter-item expanded "><a href="../../2022/10/new.html"><strong aria-hidden="true">3.1.6.</strong> CakeCTF2022 brand new crypto</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -166,123 +166,117 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="picoctf2022-sequences"><a class="header" href="#picoctf2022-sequences">picoCTF2022 Sequences</a></h1>
-<h2 id="概要"><a class="header" href="#概要">概要</a></h2>
-<p>$$
-\begin{align}
-a_0 &amp;= 1 \\
-a_1 &amp;= 2 \\
-a_2 &amp;= 3 \\
-a_3 &amp;= 4 \\
-a_i &amp;= 21a_{i-1} + 301a_{i-2} - 9549_{i-3} + 55692 a_{i-4} \quad (i&gt;4)
-\end{align}
-$$
-で定義される数列で，$a_{20000000}$を$10^{10000}$で割った余りを求める．</p>
+                        <h1 id="k3rn3lctf-pascal-rsa"><a class="header" href="#k3rn3lctf-pascal-rsa">K3RN3LCTF Pascal RSA</a></h1>
+<h2 id="問題概要"><a class="header" href="#問題概要">問題概要</a></h2>
+<p>次のPythonファイルと出力が与えら得れる．</p>
+<pre><code class="language-python">triangle =[[1]]
+flag = open('flag.txt','rb').read()
+
+from Crypto.Util.number import getPrime,bytes_to_long
+from math import gcd
+p = getPrime(20)
+while len(triangle[-1]) &lt;= p:
+    r = [1]
+    for i in range(len(triangle[-1]) - 1):
+        r.append(triangle[-1][i] + triangle[-1][i+1])
+    r.append(1)
+    triangle.append(r)
+code = ''
+for x in triangle[-1]:
+    code+=str(x%2)
+d = int(code,2)
+while True:
+    P = getPrime(512)
+    Q = getPrime(512)
+    if gcd(d, (P-1)*(Q-1)) == 1:
+        N = P*Q
+        e = pow(d,-1,(P-1)*(Q-1))
+        break
+enc = pow(bytes_to_long(flag), e, N)
+file = open('challenge.txt','w')
+file.write(f'p = {p}\nenc = {enc}\nN = {N}')
+</code></pre>
+<pre><code class="language-python">p = 751921
+enc = 9820620269072860401665805101881284961421302475382405373888746780467409082575009633494008131637326951607592072546997831382261451919226781535697132306297667495663005072695351430953630099751335020192098397722937812151774786232707555386479774460529133941848677746581256792960571286418291329780280128419358700449
+N = 84317137476812805534382776304205215410373527909056058618583365618383741423290821410270929574317899945862949829480082811084554009265439540307568537940249227388935154641779863441301292378975855625325375299980291629608995049742243591901547177853086110999523167557589597375590016312480342995048934488540440868447 
+</code></pre>
 <h2 id="解法"><a class="header" href="#解法">解法</a></h2>
-<p>数列は，$4$項間の線形漸化式である．線形漸化式の$n$項目は高速に求められる(<a href="https://shibaken28.github.io/my-library-for-competitive-programming/famous/fibo.html">参考</a>)．
-次のように行列で表し，ダブリングによって累乗を高速に計算する．
+<p>問題名がヒントになっていて，$p=751922$段(便宜上，$1$が一つだけの三角形を$0$段と呼ぶことにする)のパスカルの三角形を作り，最下段の偶奇によって$d$を作っている．この$d$を求める問題．
+問題ファイルにパスカルの三角形を求めるプログラムがついているが，$p=75192$段のパスカル三角形を作るには時間計算量$O(p^2)$がかかり，非常に時間がかかる．途中経過をすっ飛ばして，最下段の偶奇のみを求める何らかの方法を見つけなければならない．</p>
+<p>パスカルの三角形というのは，次のようなものである．
 $$
-\begin{pmatrix}
-21 &amp; 301 &amp; -9549 &amp; 55692 \\
-1 &amp;0&amp;0&amp;0\\
-0&amp;1&amp;0&amp;0\\
-0&amp;0&amp;1&amp;0\\
-\end{pmatrix}
-^{n-3}
-\begin{pmatrix}
-a_3\\
-a_2\\
-a_1\\
-a_0
-\end{pmatrix}
-=
-\begin{pmatrix}
-a_n\\
-a_{n-1}\\
-a_{n-2}\\
-a_{n-3}
-\end{pmatrix}
-$$</p>
-<pre><code class="language-python">import math
-import hashlib
-import sys
-from tqdm import tqdm
-import functools
-
-ITERS = int(2e7)
-VERIF_KEY = &quot;96cc5f3b460732b442814fd33cf8537c&quot;
-ENCRYPTED_FLAG = bytes.fromhex(&quot;42cbbce1487b443de1acf4834baed794f4bbd0dfe08b5f3b248ef7c32b&quot;)
-
-def mat_mul(a, b) :
-    I, J, K = len(a), len(b[0]), len(b)
-    c = [[0] * J for _ in range(I)]
-    for i in range(I) :
-        for j in range(J) :
-            for k in range(K) :
-                c[i][j] += a[i][k] * b[k][j]
-            c[i][j] %= 10**10000
-    return c
-
-
-def mat_pow(x, n):
-    y = [[0] * len(x) for _ in range(len(x))]
-
-    for i in range(len(x)):
-        y[i][i] = 1
-
-    while n &gt; 0:
-        if n &amp; 1:
-            y = mat_mul(x, y)
-        x = mat_mul(x, x)
-        n &gt;&gt;= 1
-
-    return y
+\begin{array}{c}
+1 \\
+1\ 1\\
+1\ 2\ 1\\
+1\ 3\ 3\ 1\\
+1\ 4\ 6\ 4\ 1\\
+1\ 5\ 10\ 10\ 5\ 1\\
+\vdots \qquad \vdots \qquad \vdots
+\end{array}
+$$
+これは，二項係数を並べたものと見ることができる．
+なぜこれが成り立つかは，三角形の上の頂点からその場所までの経路の数を考えるとわかりやすい(ここではあまり説明しない)．
+$$
+\begin{array}{c}
+{}_0\textrm{C}_0 \\
+{}_1\textrm{C}_0\ {}_1\textrm{C}_1\\
+{}_2\textrm{C}_0\ {}_2\textrm{C}_1\ {}_2\textrm{C}_2\\
+{}_3\textrm{C}_0\ {}_3\textrm{C}_1\ {}_3\textrm{C}_2\ {}_3\textrm{C}_3\\
+{}_4\textrm{C}_0\ {}_4\textrm{C}_1\ {}_4\textrm{C}_2\ {}_4\textrm{C}_3\ {}_4\textrm{C}_4\\
+\vdots \qquad \vdots \qquad \vdots
+\end{array}
+$$
+$p$段のパスカルの三角形の最下段は，${}_p\textrm{C}_i(0\leq i\leq p)$が並んでいる．</p>
+<p>ここで，ルーカスの定理を使う．</p>
+<p>$$
+{}_m\textrm{C}_n = \prod_{i=0}^{k} {}_{m_i}\textrm{C}_{n_i} \pmod p \\
+$$
+ただし，$m_k m_{k-1} m_{k-2} \cdots m_1 m_0$は $m$の$p$進数表示，$n_k n_{k-1} n_{k-2} \cdots n_1 n_0$は $n$の$p$進数表示である．
+特に，$\pmod 2$の世界は次の$4$パターンしか出てこない．
+$$
+{}_1\textrm{C}_0 = 1 \\
+{}_1\textrm{C}_1 = 1 \\
+{}_0\textrm{C}_0 = 1 \\
+{}_0\textrm{C}_1 = 0
+$$
+よって，ルーカスの定理を使うときに${}_0\textrm{C}_1$($m_i=0$かつ$n_i=1$となる$i$)が1つも出てこなかったら，計算結果は$1 \pmod 2$，すなわち奇数となる．これは，<code>m&amp;n == n</code>が真であることと同値である．</p>
+<p>これで，${}_p\textrm{C}_i(0\leq i\leq p)$の偶奇が各$i$について$O(1)$で計算できる．</p>
+<pre><code class="language-python">p = 751921
+enc = 9820620269072860401665805101881284961421302475382405373888746780467409082575009633494008131637326951607592072546997831382261451919226781535697132306297667495663005072695351430953630099751335020192098397722937812151774786232707555386479774460529133941848677746581256792960571286418291329780280128419358700449
+N = 84317137476812805534382776304205215410373527909056058618583365618383741423290821410270929574317899945862949829480082811084554009265439540307568537940249227388935154641779863441301292378975855625325375299980291629608995049742243591901547177853086110999523167557589597375590016312480342995048934488540440868447
 
 
-d0 = 0
-ret = [[4], [3], [2],[1]]
-mat = [[21,301,-9549,55692], [1, 0, 0, 0], [0, 1, 0, 0],[0,0,1,0]]
-#ret = mat_mul(mat_pow(mat, ITERS), ret)
-#ret = [[1],[1]]
-#mat = [[1,1], [1,0]]
-ret = mat_mul(mat_pow(mat, ITRES), ret)
-print(ret)
+def is_nCk_odd( n,k):
+    return n&amp;k == k
 
+code=''
+for i in range(0,p+1):
+    ch=is_nCk_odd(p,i)
+    if ch:
+        code+='1'
+    else:
+        code+='0'
 
-# Decrypt the flag
-def decrypt_flag(sol):
-    sol = sol % (10**10000)
-    sol = str(sol)
-    sol_md5 = hashlib.md5(sol.encode()).hexdigest()
+d=int(code,2)
 
-    if sol_md5 != VERIF_KEY:
-        print(&quot;Incorrect solution&quot;)
-        sys.exit(1)
-
-    key = hashlib.sha256(sol.encode()).digest()
-    flag = bytearray([char ^ key[i] for i, char in enumerate(ENCRYPTED_FLAG)]).decode()
-
-    print(flag)
-
-if __name__ == &quot;__main__&quot;:
-    sol = A
-    decrypt_flag(sol)
+print(hex(pow(enc,d,N)))
 </code></pre>
 <h2 id="感想"><a class="header" href="#感想">感想</a></h2>
-<p>競プロチック</p>
+<p>めっちゃ数論</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../../2022/10/discrete.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../2022/10/seq.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../../2022/10/pascal.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../../2022/10/frozen.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -294,13 +288,13 @@ if __name__ == &quot;__main__&quot;:
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../../2022/10/discrete.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../2022/10/seq.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a rel="next" href="../../2022/10/pascal.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../../2022/10/frozen.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
