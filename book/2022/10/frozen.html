@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>picoCTF2022 Sequences - shiba&#x27;s writeups</title>
+        <title>CakeCTF2022 frozen cake - shiba&#x27;s writeups</title>
         
         
 
@@ -98,7 +98,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../../about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="chapter-item expanded "><a href="../../know/index.html"><strong aria-hidden="true">2.</strong> 知識</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../know/mod.html"><strong aria-hidden="true">2.1.</strong> 合同式基本</a></li><li class="chapter-item expanded "><a href="../../know/factor.html"><strong aria-hidden="true">2.2.</strong> ❌素因数分解</a></li><li class="chapter-item expanded "><a href="../../know/gcd.html"><strong aria-hidden="true">2.3.</strong> ❌最大公約数</a></li><li class="chapter-item expanded "><a href="../../know/extgcd.html"><strong aria-hidden="true">2.4.</strong> ❌拡張ユークリッドの互除法</a></li><li class="chapter-item expanded "><a href="../../know/fermat.html"><strong aria-hidden="true">2.5.</strong> ❌フェルマーの小定理</a></li><li class="chapter-item expanded "><a href="../../know/DLP.html"><strong aria-hidden="true">2.6.</strong> ❌離散対数問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../2022/index.html"><strong aria-hidden="true">3.</strong> 2022</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2022/10/index.html"><strong aria-hidden="true">3.1.</strong> 10月</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2022/10/together.html"><strong aria-hidden="true">3.1.1.</strong> CakeCTF2021 together as one</a></li><li class="chapter-item expanded "><a href="../../2022/10/discrete.html"><strong aria-hidden="true">3.1.2.</strong> CakeCTF2021 discrete_log</a></li><li class="chapter-item expanded "><a href="../../2022/10/seq.html" class="active"><strong aria-hidden="true">3.1.3.</strong> picoCTF2022 Sequences</a></li><li class="chapter-item expanded "><a href="../../2022/10/pascal.html"><strong aria-hidden="true">3.1.4.</strong> K3RN3LCTF Pascal RSA</a></li><li class="chapter-item expanded "><a href="../../2022/10/frozen.html"><strong aria-hidden="true">3.1.5.</strong> CakeCTF2022 frozen cake</a></li><li class="chapter-item expanded "><a href="../../2022/10/new.html"><strong aria-hidden="true">3.1.6.</strong> CakeCTF2022 brand new crypto</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="chapter-item expanded "><a href="../../know/index.html"><strong aria-hidden="true">2.</strong> 知識</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../know/mod.html"><strong aria-hidden="true">2.1.</strong> 合同式基本</a></li><li class="chapter-item expanded "><a href="../../know/factor.html"><strong aria-hidden="true">2.2.</strong> ❌素因数分解</a></li><li class="chapter-item expanded "><a href="../../know/gcd.html"><strong aria-hidden="true">2.3.</strong> ❌最大公約数</a></li><li class="chapter-item expanded "><a href="../../know/extgcd.html"><strong aria-hidden="true">2.4.</strong> ❌拡張ユークリッドの互除法</a></li><li class="chapter-item expanded "><a href="../../know/fermat.html"><strong aria-hidden="true">2.5.</strong> ❌フェルマーの小定理</a></li><li class="chapter-item expanded "><a href="../../know/DLP.html"><strong aria-hidden="true">2.6.</strong> ❌離散対数問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../2022/index.html"><strong aria-hidden="true">3.</strong> 2022</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2022/10/index.html"><strong aria-hidden="true">3.1.</strong> 10月</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2022/10/together.html"><strong aria-hidden="true">3.1.1.</strong> CakeCTF2021 together as one</a></li><li class="chapter-item expanded "><a href="../../2022/10/discrete.html"><strong aria-hidden="true">3.1.2.</strong> CakeCTF2021 discrete_log</a></li><li class="chapter-item expanded "><a href="../../2022/10/seq.html"><strong aria-hidden="true">3.1.3.</strong> picoCTF2022 Sequences</a></li><li class="chapter-item expanded "><a href="../../2022/10/pascal.html"><strong aria-hidden="true">3.1.4.</strong> K3RN3LCTF Pascal RSA</a></li><li class="chapter-item expanded "><a href="../../2022/10/frozen.html" class="active"><strong aria-hidden="true">3.1.5.</strong> CakeCTF2022 frozen cake</a></li><li class="chapter-item expanded "><a href="../../2022/10/new.html"><strong aria-hidden="true">3.1.6.</strong> CakeCTF2022 brand new crypto</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -166,123 +166,63 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="picoctf2022-sequences"><a class="header" href="#picoctf2022-sequences">picoCTF2022 Sequences</a></h1>
-<h2 id="概要"><a class="header" href="#概要">概要</a></h2>
-<p>$$
+                        <h1 id="cakectf2022-frozen-cake"><a class="header" href="#cakectf2022-frozen-cake">CakeCTF2022 frozen cake</a></h1>
+<h2 id="問題"><a class="header" href="#問題">問題</a></h2>
+<p><a href="https://github.com/theoremoon/cakectf2022-public/tree/master/crypto/frozen_cake/distfiles">問題ファイル</a>
+素数$p,q$と平文$m$，$n=pq$から次の$a,b,c$の値が与えられる．$n$の値も与えられる．
+$$
 \begin{align}
-a_0 &amp;= 1 \\
-a_1 &amp;= 2 \\
-a_2 &amp;= 3 \\
-a_3 &amp;= 4 \\
-a_i &amp;= 21a_{i-1} + 301a_{i-2} - 9549_{i-3} + 55692 a_{i-4} \quad (i&gt;4)
+a &amp;\equiv m^p \mod n \\
+b &amp;\equiv m^q \mod n \\
+c &amp;\equiv m^n \mod n
 \end{align}
-$$
-で定義される数列で，$a_{20000000}$を$10^{10000}$で割った余りを求める．</p>
-<h2 id="解法"><a class="header" href="#解法">解法</a></h2>
-<p>数列は，$4$項間の線形漸化式である．線形漸化式の$n$項目は高速に求められる(<a href="https://shibaken28.github.io/my-library-for-competitive-programming/famous/fibo.html">参考</a>)．
-次のように行列で表し，ダブリングによって累乗を高速に計算する．
-$$
-\begin{pmatrix}
-21 &amp; 301 &amp; -9549 &amp; 55692 \\
-1 &amp;0&amp;0&amp;0\\
-0&amp;1&amp;0&amp;0\\
-0&amp;0&amp;1&amp;0\\
-\end{pmatrix}
-^{n-3}
-\begin{pmatrix}
-a_3\\
-a_2\\
-a_1\\
-a_0
-\end{pmatrix}
-=
-\begin{pmatrix}
-a_n\\
-a_{n-1}\\
-a_{n-2}\\
-a_{n-3}
-\end{pmatrix}
 $$</p>
-<pre><code class="language-python">import math
-import hashlib
-import sys
-from tqdm import tqdm
-import functools
+<h2 id="解法"><a class="header" href="#解法">解法</a></h2>
+<p>$p$と$q$は$\phi(n)$と互いに素ではないため，$a,b$から$m$を復元するのは難しそう．
+$c$を変形してみる．</p>
+<p>$$
+n = (p-1)(q-1) + p+q-1 = \phi(n) + p+q-1 \\
+c \equiv m^n \equiv m^{\phi(n) +p+q-1} \equiv m^{p+q-1} \equiv m^p m^q m^{-1}\pmod n
+$$</p>
+<p>ここで，$m^p,m^q\pmod n$の値はわかっているので，
+$$
+c a^{-1} b^{-1} \equiv m^{-1} \pmod n
+$$
+これで$m^{-1}\mod n$が求まり，これの逆数がフラグである．</p>
+<pre><code class="language-python">from Crypto.Util.number import inverse , long_to_bytes
 
-ITERS = int(2e7)
-VERIF_KEY = &quot;96cc5f3b460732b442814fd33cf8537c&quot;
-ENCRYPTED_FLAG = bytes.fromhex(&quot;42cbbce1487b443de1acf4834baed794f4bbd0dfe08b5f3b248ef7c32b&quot;)
+n = 101205131618457490641888226172378900782027938652382007193297646066245321085334424928920128567827889452079884571045344711457176257019858157287424646000972526730522884040459357134430948940886663606586037466289300864147185085616790054121654786459639161527509024925015109654917697542322418538800304501255357308131
+a = 38686943509950033726712042913718602015746270494794620817845630744834821038141855935687477445507431250618882887343417719366326751444481151632966047740583539454488232216388308299503129892656814962238386222995387787074530151173515835774172341113153924268653274210010830431617266231895651198976989796620254642528
+b = 83977895709438322981595417453453058400465353471362634652936475655371158094363869813512319678334779139681172477729044378942906546785697439730712057649619691929500952253818768414839548038664187232924265128952392200845425064991075296143440829148415481807496095010301335416711112897000382336725454278461965303477
+c = 21459707600930866066419234194792759634183685313775248277484460333960658047171300820279668556014320938220170794027117386852057041210320434076253459389230704653466300429747719579911728990434338588576613885658479123772761552010662234507298817973164062457755456249314287213795660922615911433075228241429771610549
 
-def mat_mul(a, b) :
-    I, J, K = len(a), len(b[0]), len(b)
-    c = [[0] * J for _ in range(I)]
-    for i in range(I) :
-        for j in range(J) :
-            for k in range(K) :
-                c[i][j] += a[i][k] * b[k][j]
-            c[i][j] %= 10**10000
-    return c
+ainv = inverse(a,n)
+binv = inverse(b,n)
+minv = (c * ainv * binv)%n
+print(long_to_bytes(inverse(minv,n)))
 
-
-def mat_pow(x, n):
-    y = [[0] * len(x) for _ in range(len(x))]
-
-    for i in range(len(x)):
-        y[i][i] = 1
-
-    while n &gt; 0:
-        if n &amp; 1:
-            y = mat_mul(x, y)
-        x = mat_mul(x, x)
-        n &gt;&gt;= 1
-
-    return y
-
-
-d0 = 0
-ret = [[4], [3], [2],[1]]
-mat = [[21,301,-9549,55692], [1, 0, 0, 0], [0, 1, 0, 0],[0,0,1,0]]
-#ret = mat_mul(mat_pow(mat, ITERS), ret)
-#ret = [[1],[1]]
-#mat = [[1,1], [1,0]]
-ret = mat_mul(mat_pow(mat, ITRES), ret)
-print(ret)
-
-
-# Decrypt the flag
-def decrypt_flag(sol):
-    sol = sol % (10**10000)
-    sol = str(sol)
-    sol_md5 = hashlib.md5(sol.encode()).hexdigest()
-
-    if sol_md5 != VERIF_KEY:
-        print(&quot;Incorrect solution&quot;)
-        sys.exit(1)
-
-    key = hashlib.sha256(sol.encode()).digest()
-    flag = bytearray([char ^ key[i] for i, char in enumerate(ENCRYPTED_FLAG)]).decode()
-
-    print(flag)
-
-if __name__ == &quot;__main__&quot;:
-    sol = A
-    decrypt_flag(sol)
+</code></pre>
+<pre><code>CakeCTF{oh_you_got_a_tepid_cake_sorry}
 </code></pre>
 <h2 id="感想"><a class="header" href="#感想">感想</a></h2>
-<p>競プロチック</p>
+<p>CakeCTF 2022 開催記より引用(<a href="https://furutsuki.hatenablog.com/entry/2022/09/05/000733#frozen-cake">リンク</a>)．</p>
+<blockquote>
+<p>warmupでRSAの乗法準同型性に関する知識とフェルマーの小定理を要求していてなかなかハードですね。とはいえCTFの暗号分野では基礎となるような数学の知識ですので、CTFの問題としてはこのくらいは出題したいところです。これが解けたらある程度のCryptoに関する実力がありますと言って良いんじゃないかと思います。</p>
+</blockquote>
+<p>ある程度のCryptoに関する実力があるそうです．暗号er名乗っていいですか！</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../../2022/10/discrete.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../2022/10/pascal.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../../2022/10/pascal.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../../2022/10/new.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -294,13 +234,13 @@ if __name__ == &quot;__main__&quot;:
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../../2022/10/discrete.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../2022/10/pascal.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a rel="next" href="../../2022/10/pascal.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../../2022/10/new.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
