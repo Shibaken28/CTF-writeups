@@ -1,13 +1,18 @@
 # Summary
 
 - [About](./about.md)
-- [知識](./know/index.md)
+<!-- 
+- [数学](./know/index.md)
+  - [計算量](./know/complexity.md)
   - [合同式基本](./know/mod.md)
-  - [❌素因数分解](./know/factor.md)
-  - [❌最大公約数](./know/gcd.md)
+  - [ユークリッドの互除法](./know/gcd.md)
   - [❌拡張ユークリッドの互除法](./know/extgcd.md)
   - [❌フェルマーの小定理](./know/fermat.md)
+  - [❌素因数分解](./know/factor.md)
   - [❌離散対数問題](./know/DLP.md)
+-->
+- [Python](./python/index.md)
+  - [Pythonの罠](./python/trap.md)
 - [2022](./2022/index.md)
   - [10月](./2022/10/index.md)
     - [CakeCTF2021 together as one](./2022/10/together.md)
