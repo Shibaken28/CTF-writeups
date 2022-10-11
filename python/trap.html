@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>❌素因数分解 - shiba&#x27;s writeups</title>
+        <title>Pythonの罠 - shiba&#x27;s writeups</title>
         
         
 
@@ -103,7 +103,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="chapter-item expanded "><a href="../know/index.html"><strong aria-hidden="true">2.</strong> 知識</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../know/mod.html"><strong aria-hidden="true">2.1.</strong> 合同式基本</a></li><li class="chapter-item expanded "><a href="../know/factor.html" class="active"><strong aria-hidden="true">2.2.</strong> ❌素因数分解</a></li><li class="chapter-item expanded "><a href="../know/gcd.html"><strong aria-hidden="true">2.3.</strong> ❌最大公約数</a></li><li class="chapter-item expanded "><a href="../know/extgcd.html"><strong aria-hidden="true">2.4.</strong> ❌拡張ユークリッドの互除法</a></li><li class="chapter-item expanded "><a href="../know/fermat.html"><strong aria-hidden="true">2.5.</strong> ❌フェルマーの小定理</a></li><li class="chapter-item expanded "><a href="../know/DLP.html"><strong aria-hidden="true">2.6.</strong> ❌離散対数問題</a></li></ol></li><li class="chapter-item expanded "><a href="../2022/index.html"><strong aria-hidden="true">3.</strong> 2022</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../2022/10/index.html"><strong aria-hidden="true">3.1.</strong> 10月</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../2022/10/together.html"><strong aria-hidden="true">3.1.1.</strong> CakeCTF2021 together as one</a></li><li class="chapter-item expanded "><a href="../2022/10/discrete.html"><strong aria-hidden="true">3.1.2.</strong> CakeCTF2021 discrete_log</a></li><li class="chapter-item expanded "><a href="../2022/10/seq.html"><strong aria-hidden="true">3.1.3.</strong> picoCTF2022 Sequences</a></li><li class="chapter-item expanded "><a href="../2022/10/pascal.html"><strong aria-hidden="true">3.1.4.</strong> K3RN3LCTF Pascal RSA</a></li><li class="chapter-item expanded "><a href="../2022/10/frozen.html"><strong aria-hidden="true">3.1.5.</strong> CakeCTF2022 frozen cake</a></li><li class="chapter-item expanded "><a href="../2022/10/new.html"><strong aria-hidden="true">3.1.6.</strong> CakeCTF2022 brand new crypto</a></li><li class="chapter-item expanded "><a href="../2022/10/sweet.html"><strong aria-hidden="true">3.1.7.</strong> waniCTF2021 sweet curve</a></li><li class="chapter-item expanded "><a href="../2022/10/cipher.html"><strong aria-hidden="true">3.1.8.</strong> InterKosenCTF2020 ciphertexts</a></li><li class="chapter-item expanded "><a href="../2022/10/hugee.html"><strong aria-hidden="true">3.1.9.</strong> CrewCTF2022 The HUGE e</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="chapter-item expanded "><a href="../python/index.html"><strong aria-hidden="true">2.</strong> Python</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../python/trap.html" class="active"><strong aria-hidden="true">2.1.</strong> Pythonの罠</a></li></ol></li><li class="chapter-item expanded "><a href="../2022/index.html"><strong aria-hidden="true">3.</strong> 2022</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../2022/10/index.html"><strong aria-hidden="true">3.1.</strong> 10月</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../2022/10/together.html"><strong aria-hidden="true">3.1.1.</strong> CakeCTF2021 together as one</a></li><li class="chapter-item expanded "><a href="../2022/10/discrete.html"><strong aria-hidden="true">3.1.2.</strong> CakeCTF2021 discrete_log</a></li><li class="chapter-item expanded "><a href="../2022/10/seq.html"><strong aria-hidden="true">3.1.3.</strong> picoCTF2022 Sequences</a></li><li class="chapter-item expanded "><a href="../2022/10/pascal.html"><strong aria-hidden="true">3.1.4.</strong> K3RN3LCTF Pascal RSA</a></li><li class="chapter-item expanded "><a href="../2022/10/frozen.html"><strong aria-hidden="true">3.1.5.</strong> CakeCTF2022 frozen cake</a></li><li class="chapter-item expanded "><a href="../2022/10/new.html"><strong aria-hidden="true">3.1.6.</strong> CakeCTF2022 brand new crypto</a></li><li class="chapter-item expanded "><a href="../2022/10/sweet.html"><strong aria-hidden="true">3.1.7.</strong> waniCTF2021 sweet curve</a></li><li class="chapter-item expanded "><a href="../2022/10/cipher.html"><strong aria-hidden="true">3.1.8.</strong> InterKosenCTF2020 ciphertexts</a></li><li class="chapter-item expanded "><a href="../2022/10/hugee.html"><strong aria-hidden="true">3.1.9.</strong> CrewCTF2022 The HUGE e</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -171,22 +171,91 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="素因数分解"><a class="header" href="#素因数分解">素因数分解</a></h1>
-<h2 id="愚直"><a class="header" href="#愚直">愚直</a></h2>
-<p>$2$から順に</p>
+                        <h1 id="pythonの罠"><a class="header" href="#pythonの罠">Pythonの罠</a></h1>
+<h2 id="listのコピー"><a class="header" href="#listのコピー"><code>list</code>のコピー</a></h2>
+<pre><code class="language-python">a = [1,2,3]
+b = a
+b[0] = 0
+print(a)
+</code></pre>
+<pre><code class="language-python">[0,2,3]
+</code></pre>
+<p>なんと，<code>b</code>の代入元である<code>a</code>も変わってしまった．</p>
+<p>これを回避するために，<code>a</code>の<code>copy</code>を作る必要がある．</p>
+<pre><code class="language-python">a = [1,2,3]
+b = a.copy()
+b[0] = 0
+print(a)
+</code></pre>
+<pre><code class="language-python">[1,2,3]
+</code></pre>
+<h2 id="割り算の演算子"><a class="header" href="#割り算の演算子">割り算の演算子</a></h2>
+<pre><code class="language-python">a = 5
+b = 2
+print(a/b)
+print(a//b)
+</code></pre>
+<pre><code class="language-python">2.5
+2
+</code></pre>
+<p><code>/</code>は小数点以下を含む割り算を行う．<code>//</code>は小数点以下を切り捨てた割り算を行う．
+<code>/</code>を大きな整数で使おうとすると正しい結果が得られない．</p>
+<p>次のプログラムでは，$9999\cdots9999$を$3$で割った値，すなわち$3333\cdots3333$を求めたい．</p>
+<pre><code class="language-python">a = 999999999999999999999999999999999999999999999999999999999999999999999999999999999999
+b = 3
+print(a/b)
+print('{:.1000g}'.format(a/b)) #eを使わない表示にする．
+print(a//b)
+</code></pre>
+<pre><code class="language-python">3.333333333333333e+83
+333333333333333316642274409837779174589735593005847147516488057690807469867494539264
+333333333333333333333333333333333333333333333333333333333333333333333333333333333333
+</code></pre>
+<p>演算子<code>/</code>を使った場合，でたらめな値が得られたことがわかる．
+<code>//</code>を使うと，正しい値が得られる．</p>
+<h2 id="小数を扱う関数"><a class="header" href="#小数を扱う関数">小数を扱う関数</a></h2>
+<p><code>sqrt</code>関数，<code>pow</code>関数などは小数で計算をする．</p>
+<pre><code class="language-python">a = 10
+b = pow(a,100)
+print('{:.10000g}'.format(b))
+
+x = 10000000000000000000000000000000000
+a = x*x
+b = sqrt(a)
+print('{:.10000g}'.format(b))
+</code></pre>
+<pre><code class="language-python">10000000000000000159028911097599180468360808563945281389781327557747838772170381060813469985856815104
+9999999999999999455752309870428160
+</code></pre>
+<p>わけのわからない値が得られる．
+基本的に<strong>標準ライブラリの関数は信用してはいけない</strong>．PyCryptodome，sagemath，NumPyなどのライブラリを使うか，自分で実装する必要がある．</p>
+<h2 id="再帰関数の深さ"><a class="header" href="#再帰関数の深さ">再帰関数の深さ</a></h2>
+<pre><code class="language-python">def f(n):
+    if n==0:
+        return 0
+    return f(n-1)+1
+print(f(100000))
+</code></pre>
+<pre><code class="language-python">RecursionError: maximum recursion depth exceeded in comparison
+</code></pre>
+<p>再帰関数の深さ(recursion depth)の最大値は，デフォルトでは$1000$である．
+これを変更するには，<code>sys</code>モジュールを使う．</p>
+<pre><code class="language-python">import sys
+sys.setrecursionlimit(1000000)
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../know/mod.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../python/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../know/gcd.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../2022/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -198,13 +267,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../know/mod.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../python/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a rel="next" href="../know/gcd.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../2022/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
