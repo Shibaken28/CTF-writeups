@@ -11,6 +11,7 @@
   - [❌素因数分解](./know/factor.md)
   - [❌離散対数問題](./know/DLP.md)
 -->
+
 - [Python](./python/index.md)
   - [Pythonの罠](./python/trap.md)
 - [2022](./2022/index.md)
@@ -24,3 +25,6 @@
     - [waniCTF2021 sweet curve](./2022/10/sweet.md)
     - [InterKosenCTF2020 ciphertexts](./2022/10/cipher.md)
     - [CrewCTF2022 The HUGE e](./2022/10/hugee.md)
+
+- [自作問題](./my/index.md)
+  - [ゴミ問題](./my/gomi.md)
