@@ -1,19 +1,14 @@
 # Summary
 
 - [About](./about.md)
-<!-- 
 - [数学](./know/index.md)
-  - [計算量](./know/complexity.md)
-  - [合同式基本](./know/mod.md)
-  - [ユークリッドの互除法](./know/gcd.md)
-  - [❌拡張ユークリッドの互除法](./know/extgcd.md)
-  - [❌フェルマーの小定理](./know/fermat.md)
-  - [❌素因数分解](./know/factor.md)
-  - [❌離散対数問題](./know/DLP.md)
--->
+  - [RSA](./know/rsa.md)
 
-- [Python](./python/index.md)
+
+- [Pythonでの実装](./python/index.md)
   - [Pythonの罠](./python/trap.md)
+  - [Miller–Rabin primality test](./python/Miller-Rabin.md)
+  - [getPrime](./python/getPrime.md)
 - [2022](./2022/index.md)
   - [10月](./2022/10/index.md)
     - [CakeCTF2021 together as one](./2022/10/together.md)
@@ -25,6 +20,6 @@
     - [waniCTF2021 sweet curve](./2022/10/sweet.md)
     - [InterKosenCTF2020 ciphertexts](./2022/10/cipher.md)
     - [CrewCTF2022 The HUGE e](./2022/10/hugee.md)
+  - [11月](./2022/11/index.md)
+    - [ImaginaryCTF October 2022 RSA-ECB](./2022/11/rsa-ecb.md)
 
-- [自作問題](./my/index.md)
-  - [ゴミ問題](./my/gomi.md)
