@@ -22,4 +22,5 @@
     - [CrewCTF2022 The HUGE e](./2022/10/hugee.md)
   - [11月](./2022/11/index.md)
     - [ImaginaryCTF October 2022 RSA-ECB](./2022/11/rsa-ecb.md)
-
+    - [ImaginaryCTF October 2022 RSA-CBC](./2022/11/rsa-cbc.md)
+    - [ImaginaryCTF October 2022 Luggage](./2022/11/Luggage.md)
