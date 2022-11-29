@@ -24,3 +24,4 @@
     - [ImaginaryCTF October 2022 RSA-ECB](./2022/11/rsa-ecb.md)
     - [ImaginaryCTF October 2022 RSA-CBC](./2022/11/rsa-cbc.md)
     - [ImaginaryCTF October 2022 Luggage](./2022/11/Luggage.md)
+    - [ImaginaryCTF October 2022 Rrrrrrandomness](./2022/11/Rrrrrrandomness.md)

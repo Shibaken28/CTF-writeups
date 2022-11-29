@@ -32,7 +32,7 @@ print(f"{sum(c)}")
 ナップザック問題を解くにはLLLを使う．
 
 <details>
-<summary>LLLの簡単な説明</summary>
+<summary>LLLで解くナップザック問題の簡単な説明</summary>
 
 格子の作り方は次の通り．
 
@@ -111,7 +111,5 @@ for row in out:
         print(long_to_bytes(flag)) #b'ictf{sUpeRinCrEasIng_wH4T???}'
 ```
 
-
-
-
-
+# コメント
+LLLの結果の反転を忘れて困惑した．
